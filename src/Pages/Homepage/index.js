@@ -21,7 +21,8 @@ import {
   Phone,
   Mail,
   MapPin,
-  ArrowUpRight
+  ArrowUpRight,
+  ExternalLink
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import CostEstimator from '../../components/CostEstimator';
@@ -137,6 +138,23 @@ const techList = [
 
 // Sample Case Studies
 const caseStudies = [
+  {
+    id: 'kicknshot',
+    category: 'Mobile Application',
+    client: 'KicknShot',
+    title: 'KicknShot — Sports Turf Booking & Player Community Platform',
+    challenge: 'Athletes & turf venues suffered from manual phone bookings, double-booked slots, and fragmented tournament management.',
+    solution: 'Built an end-to-end mobile & web ecosystem featuring sub-200ms real-time slot booking, UPI/card checkouts, and player team matchmaking.',
+    metrics: [
+      { value: '10k+', label: 'Active Downloads' },
+      { value: '4.8 ★', label: 'Store Rating' },
+      { value: '< 200ms', label: 'Slot Booking SLA' }
+    ],
+    technologies: ['React Native', 'Node.js', 'PostgreSQL', 'Redis', 'WebSockets', 'AWS'],
+    appStoreUrl: 'https://apps.apple.com/in/app/kicknshot/id6781648167',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.turfit',
+    websiteUrl: 'https://kicknshot.com'
+  },
   {
     id: 'fintech-core',
     category: 'FinTech & Cloud',
@@ -588,6 +606,145 @@ const Homepage = ({ onOpenConsultation }) => {
         </div>
       </section>
 
+      {/* 3.5. IN-HOUSE APP: KICKNSHOT */}
+      <section id="kicknshot" className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="relative rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden border border-cyan-500/30 bg-gradient-to-br from-[#061233] via-[#050b1f] to-[#02050f] shadow-2xl shadow-cyan-950/50">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Left Column: Product Information & Downloads */}
+            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full glass-pill border-cyan-500/40 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Our Live In-House App</span>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+                KicknShot — <span className="gradient-text-cyan">Sports & Turf Booking App</span>
+              </h2>
+
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                KicknShot is our live mobile app built for players and sports venue owners. Easily book turf slots in real-time, join open matches, and split expenses seamlessly.
+              </p>
+
+              {/* Supported Sports Tags */}
+              <div>
+                <div className="text-xs font-mono uppercase text-gray-400 mb-2">Book Grounds & Arenas For:</div>
+                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                  {['⚽ Football Turfs', '🏏 Cricket Grounds', '🏓 Pickleball Courts', '🎱 Snooker & Pool', '🏸 Badminton'].map((sport, idx) => (
+                    <span key={idx} className="px-3 py-1 rounded-lg bg-[#091433] border border-cyan-500/20 text-xs text-gray-200 font-medium">
+                      {sport}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Key Features (Simple 3 points) */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                <div className="bg-[#091433]/70 border border-white/5 rounded-xl p-3 text-left">
+                  <div className="flex items-center space-x-1.5 text-cyan-400 font-bold text-xs mb-0.5">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>Real-Time Slots</span>
+                  </div>
+                  <p className="text-[11px] text-gray-400">Live calendar scheduling with zero double-booking.</p>
+                </div>
+
+                <div className="bg-[#091433]/70 border border-white/5 rounded-xl p-3 text-left">
+                  <div className="flex items-center space-x-1.5 text-blue-400 font-bold text-xs mb-0.5">
+                    <Star className="w-3.5 h-3.5" />
+                    <span>Tournaments</span>
+                  </div>
+                  <p className="text-[11px] text-gray-400">Join sports communities and track match scores.</p>
+                </div>
+
+                <div className="bg-[#091433]/70 border border-white/5 rounded-xl p-3 text-left">
+                  <div className="flex items-center space-x-1.5 text-emerald-400 font-bold text-xs mb-0.5">
+                    <Shield className="w-3.5 h-3.5" />
+                    <span>Split Payments</span>
+                  </div>
+                  <p className="text-[11px] text-gray-400">Easy UPI, cards, and team expense sharing.</p>
+                </div>
+              </div>
+
+              {/* Download Buttons */}
+              <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                {/* App Store */}
+                <a
+                  href="https://apps.apple.com/in/app/kicknshot/id6781648167"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center space-x-2.5 px-4 py-2.5 rounded-xl bg-black/80 hover:bg-black border border-white/20 hover:border-cyan-400 text-white text-xs font-semibold transition-all shadow-md hover:scale-105"
+                >
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.36-.58.67-1.09 1.74-.96 2.77 1.01.08 2.06-.52 2.69-1.28z"/>
+                  </svg>
+                  <div className="text-left leading-tight">
+                    <div className="text-[9px] text-gray-400 font-normal">Download on the</div>
+                    <div className="text-xs font-bold">App Store</div>
+                  </div>
+                </a>
+
+                {/* Google Play */}
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.turfit"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center space-x-2.5 px-4 py-2.5 rounded-xl bg-black/80 hover:bg-black border border-white/20 hover:border-emerald-400 text-white text-xs font-semibold transition-all shadow-md hover:scale-105"
+                >
+                  <svg className="w-5 h-5 fill-current text-emerald-400" viewBox="0 0 24 24">
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186c-.37-.367-.61-.926-.61-1.595V3.41c0-.669.24-1.228.609-1.596zm11.597 11.598l2.502 2.502-12.227 6.945 9.725-9.447zm0-2.824L5.48 1.141l12.228 6.945-2.502 2.502zm1.414 1.412l3.413 1.94c.983.559.983 1.468 0 2.027l-3.413 1.94-2.115-2.114 2.115-2.113z"/>
+                  </svg>
+                  <div className="text-left leading-tight">
+                    <div className="text-[9px] text-gray-400 font-normal">GET IT ON</div>
+                    <div className="text-xs font-bold">Google Play</div>
+                  </div>
+                </a>
+
+                {/* Official Website */}
+                <a
+                  href="https://kicknshot.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center space-x-2.5 px-4 py-2.5 rounded-xl bg-black/80 hover:bg-black border border-white/20 hover:border-cyan-400 text-white text-xs font-semibold transition-all shadow-md hover:scale-105"
+                >
+                  <Globe className="w-5 h-5 text-cyan-400" />
+                  <div className="text-left leading-tight">
+                    <div className="text-[9px] text-gray-400 font-normal">VISIT OFFICIAL</div>
+                    <div className="text-xs font-bold flex items-center gap-1">
+                      <span>Website</span>
+                      <ExternalLink className="w-3 h-3 text-gray-400" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Clean App Badge Preview */}
+            <div className="lg:col-span-5">
+              <div className="bg-[#081230] p-6 rounded-2xl border border-cyan-500/30 text-center space-y-4">
+                <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono border border-emerald-500/30">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span>LIVE APP ON STORES</span>
+                </div>
+
+                <h3 className="text-xl font-bold text-white">
+                  KicknShot
+                </h3>
+                <p className="text-xs text-gray-400 max-w-xs mx-auto">
+                  Instant turf & venue slot booking on your smartphone. Available across iOS & Android.
+                </p>
+
+                <div className="pt-2 flex justify-center items-center gap-4 text-xs font-mono text-cyan-300 border-t border-white/10">
+                  <span>📱 iOS & Android</span>
+                  <span>•</span>
+                  <span>⚡ Instant Sync</span>
+                  <span>•</span>
+                  <span>🌐 Web Portal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. INTERACTIVE COST ESTIMATOR */}
       <CostEstimator
         onOpenConsultationWithEstimate={(service, budget) => {
@@ -653,6 +810,40 @@ const Homepage = ({ onOpenConsultation }) => {
                     </div>
                   ))}
                 </div>
+
+                {/* Direct Store Links if available on case study card */}
+                {(cs.appStoreUrl || cs.playStoreUrl) && (
+                  <div className="flex items-center space-x-2 mb-4 pt-2 border-t border-white/5">
+                    {cs.appStoreUrl && (
+                      <a
+                        href={cs.appStoreUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-black/60 hover:bg-black border border-white/10 hover:border-cyan-400 text-white text-[11px] font-medium transition-all"
+                        title="Download on App Store"
+                      >
+                        <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.36-.58.67-1.09 1.74-.96 2.77 1.01.08 2.06-.52 2.69-1.28z"/>
+                        </svg>
+                        <span>App Store</span>
+                      </a>
+                    )}
+                    {cs.playStoreUrl && (
+                      <a
+                        href={cs.playStoreUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-black/60 hover:bg-black border border-white/10 hover:border-emerald-400 text-white text-[11px] font-medium transition-all"
+                        title="Get it on Google Play"
+                      >
+                        <svg className="w-3.5 h-3.5 fill-current text-emerald-400" viewBox="0 0 24 24">
+                          <path d="M3.609 1.814L13.792 12 3.61 22.186c-.37-.367-.61-.926-.61-1.595V3.41c0-.669.24-1.228.609-1.596zm11.597 11.598l2.502 2.502-12.227 6.945 9.725-9.447zm0-2.824L5.48 1.141l12.228 6.945-2.502 2.502zm1.414 1.412l3.413 1.94c.983.559.983 1.468 0 2.027l-3.413 1.94-2.115-2.114 2.115-2.113z"/>
+                        </svg>
+                        <span>Play Store</span>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
 
               <div className="pt-4 border-t border-white/10 flex items-center justify-between">
