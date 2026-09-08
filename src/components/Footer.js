@@ -72,18 +72,15 @@ const Footer = ({ onOpenConsultation }) => {
             </ul>
           </div>
 
-          {/* Navigation & Resources */}
+          {/* KicknShot App Column */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-blue-400 font-semibold">
-              Navigation
+            <h4 className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">
+              KicknShot App
             </h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link to="/" className="hover:text-cyan-300 transition-colors">Home Experience</Link></li>
-              <li><Link to="/portfolio" className="hover:text-cyan-300 transition-colors">Case Studies & Showcase</Link></li>
-              <li><a href="#estimator" className="hover:text-cyan-300 transition-colors">Interactive Cost Estimator</a></li>
-              <li><a href="#why-ttf" className="hover:text-cyan-300 transition-colors">Engineering Differentiators</a></li>
-              <li><a href="#workflow" className="hover:text-cyan-300 transition-colors">Agile Roadmap</a></li>
-              <li><a href="#contact" className="hover:text-cyan-300 transition-colors">Global Hubs & Contact</a></li>
+              <li><a href="https://apps.apple.com/in/app/kicknshot/id6781648167" target="_blank" rel="noreferrer" className="hover:text-cyan-300 transition-colors">App Store (iOS)</a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.turfit" target="_blank" rel="noreferrer" className="hover:text-emerald-300 transition-colors">Google Play (Android)</a></li>
+              <li><a href="https://kicknshot.com" target="_blank" rel="noreferrer" className="hover:text-cyan-300 transition-colors">kicknshot.com</a></li>
             </ul>
           </div>
 
